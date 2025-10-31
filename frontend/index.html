@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Employee Management System</h1>
+
+      <div class="main-content">
+        <!-- Left Section -->
+        <div class="left-section">
+          <!-- Employee List -->
+          <div class="employee-list">
+            <h2>Employee List</h2>
+            <div id="employeeList"></div>
+          </div>
+
+          <!-- Search Section -->
+          <div class="search-section">
+            <h2>Search Employees</h2>
+            <div class="search-form">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter first name..."
+              />
+              <button class="btn-secondary" onclick="searchEmployees()">
+                Search and View Employees
+              </button>
+            </div>
+          </div>
+
+          <!-- Add Employee Form -->
+          <div class="form-section">
+            <h2>Add Employee</h2>
+            <form id="addEmployeeForm" onsubmit="addEmployee(event)">
+              <div class="form-group">
+                <label for="addFirstname">First Name:</label>
+                <input type="text" id="addFirstname" required />
+              </div>
+              <div class="form-group">
+                <label for="addLastname">Last Name:</label>
+                <input type="text" id="addLastname" required />
+              </div>
+              <div class="form-group">
+                <label for="addAge">Age:</label>
+                <input type="number" id="addAge" required />
+              </div>
+              <div class="form-group">
+                <label for="addIsMarried">Marital Status:</label>
+                <input type="checkbox" id="addIsMarried" />
+              </div>
+              <button type="submit" class="btn-primary">Add Employee</button>
+            </form>
+          </div>
+
+          <!-- Edit Employee Form -->
+          <div class="form-section">
+            <h2>Edit Employee</h2>
+            <form id="editEmployeeForm" onsubmit="updateEmployee(event)">
+              <input type="hidden" id="editEmployeeId" />
+              <div class="form-group">
+                <label for="editFirstname">First Name:</label>
+                <input type="text" id="editFirstname" required />
+              </div>
+              <div class="form-group">
+                <label for="editLastname">Last Name:</label>
+                <input type="text" id="editLastname" required />
+              </div>
+              <div class="form-group">
+                <label for="editAge">Age:</label>
+                <input type="number" id="editAge" required />
+              </div>
+              <div class="form-group">
+                <label for="editIsMarried">Marital Status:</label>
+                <input type="checkbox" id="editIsMarried" />
+              </div>
+              <button type="submit" class="btn-warning">Update Employee</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+          <h2>View Employee Info</h2>
+          <div class="view-section" id="viewSection">
+            <p class="no-data">
+              No employee selected. Use the View button or search to display
+              employee information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
